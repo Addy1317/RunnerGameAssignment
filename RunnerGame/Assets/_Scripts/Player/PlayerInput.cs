@@ -38,7 +38,8 @@ namespace EdgeRunner
         {
             if (Input.GetButtonDown("Horizontal"))
             {
-                horizontalInput = Input.GetAxisRaw("Horizontal");
+                horizontalInput = Input.GetAxis("Horizontal");
+                Debug.Log(horizontalInput+" : Horizontal Input Received");
 
                 if (horizontalInput > 0)
                 {

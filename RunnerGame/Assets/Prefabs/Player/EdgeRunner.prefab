@@ -1643,10 +1643,10 @@ GameObject:
   - component: {fileID: 6010032205537281448}
   - component: {fileID: 2012111674870130902}
   - component: {fileID: 4723291032880596257}
-  - component: {fileID: 2418909952188983157}
   - component: {fileID: 4524413360758694095}
   - component: {fileID: 6754934202874103315}
   - component: {fileID: 4235046824916954345}
+  - component: {fileID: 4634280434230620579}
   m_Layer: 0
   m_Name: EdgeRunner
   m_TagString: Untagged
@@ -1665,7 +1665,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.4, z: 0}
   m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2696151436186713650}
   - {fileID: 5182631910768182937}
@@ -1742,27 +1742,6 @@ CapsuleCollider:
   m_Height: 115
   m_Direction: 1
   m_Center: {x: 0, y: 57.5, z: 0}
---- !u!114 &2418909952188983157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5769708460451189023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b1542f711c0aab4592a3c2400a40c6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 70
-  jumpForce: 7
-  playerRigidbody: {fileID: 2012111674870130902}
-  playerCapsuleCollider: {fileID: 4723291032880596257}
-  normalColliderHeight: 115
-  slidingColliderHeight: 50
-  currentLane: 0
-  groundHeight: -0.3
-  immunityTime: 1
 --- !u!114 &4524413360758694095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1808,6 +1787,26 @@ MonoBehaviour:
   scoreText: {fileID: 0}
   coinsText: {fileID: 0}
   lifesText: {fileID: 0}
+--- !u!114 &4634280434230620579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5769708460451189023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1542f711c0aab4592a3c2400a40c6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 40
+  jumpForce: 5
+  playerCapsuleCollider: {fileID: 4723291032880596257}
+  normalColliderHeight: 115
+  slidingColliderHeight: 50
+  currentLane: 0
+  groundHeight: -0.3
+  immunityTime: 1
 --- !u!1 &5811582842129118398
 GameObject:
   m_ObjectHideFlags: 0

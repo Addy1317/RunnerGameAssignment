@@ -19,7 +19,7 @@ namespace EdgeRunner
         [SerializeField] private CapsuleCollider playerCapsuleCollider;
         [SerializeField] private float normalColliderHeight = 115f;
         [SerializeField] private float slidingColliderHeight = 50f;
-        [Space]
+
         [SerializeField] LanesToMove currentLane = LanesToMove.Center;
 
         [Header("GroundCheck")]
@@ -53,15 +53,14 @@ namespace EdgeRunner
         {
             MoveForward();
             ResetDirection();
-
-            if(isJumping)
+            if (isJumping)
             {
                 ResetIsInAir();
             }
             playerModel.UpdateScoreText(playerModel.DistanceTravelled);
         }
-
-        void MoveForward()
+        
+        private void MoveForward()
         {
             GetComponent<Rigidbody>().MovePosition(transform.position +
                 (movementSpeed * Time.deltaTime * (transform.forward + targetDirection)));
@@ -77,7 +76,7 @@ namespace EdgeRunner
             }
             targetDirection = transform.right * -1;
             GetNewPositionToMove();
-            //Debug.Log(currentLane);
+            Debug.Log(currentLane);
         }
 
         public void MoveRight()
@@ -90,7 +89,7 @@ namespace EdgeRunner
             }
             targetDirection = transform.right;
             GetNewPositionToMove();
-            //Debug.Log(currentLane);
+            Debug.Log(currentLane);
         }
 
         void GetNewPositionToMove()
@@ -160,7 +159,7 @@ namespace EdgeRunner
         public void OnCoinCollected(int points)
         {
             playerModel.InscreaseCollectedCoins();
-            playerModel.UpdaCoinsText(playerModel.CollectedCoins);
+            playerModel.UpdateCoinsText(playerModel.CollectedCoins);
         }
 
         private void OnTriggerEnter(Collider other)
@@ -181,7 +180,7 @@ namespace EdgeRunner
 
         public void OnCollidedWithObstacle()
         {
-            playerAnimation.SetGetHitTrigger();
+            //playerAnimation.SetGetHitTrigger();
             playerModel.LoseLife();
             playerModel.UpdateLifesText(playerModel.Lifes);
             MakeImune();

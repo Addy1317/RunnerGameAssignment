@@ -28,7 +28,7 @@ namespace EdgeRunner
 
             UpdateScoreText(DistanceTravelled);
             UpdateLifesText(Lifes);
-            UpdaCoinsText(CollectedCoins);
+            UpdateCoinsText(CollectedCoins);
         }
 
         public void CalculateDistance()
@@ -59,7 +59,7 @@ namespace EdgeRunner
 
         public void UpdateScoreText(int score)
         {
-            scoreText.text = "Score : " + score.ToString();
+            scoreText.text = "" + score.ToString();
         }
 
         public void UpdateLifesText(int lifes)
@@ -67,7 +67,7 @@ namespace EdgeRunner
             lifesText.text = "Lives : " + lifes.ToString();
         }
 
-        public void UpdaCoinsText(int collectedCoins)
+        public void UpdateCoinsText(int collectedCoins)
         {
             coinsText.text = "Coins : " + collectedCoins.ToString();
         }
