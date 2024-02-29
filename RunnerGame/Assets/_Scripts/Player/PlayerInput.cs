@@ -8,7 +8,7 @@ namespace EdgeRunner
     {
         [Header("Script Reference")]
         private PlayerAnimation playerAnimations;
-        //PlayerMovements playerMovements;
+        private PlayerController playerController;
 
         [Header("Input Attributes")]
         private float horizontalInput;
@@ -17,7 +17,7 @@ namespace EdgeRunner
         private void Start()
         {
             playerAnimations = GetComponent<PlayerAnimation>();
-            //playerMovements = GetComponent<PlayerMovements>();
+            playerController = GetComponent<PlayerController>();
         }
 
         private void Update()
@@ -38,15 +38,17 @@ namespace EdgeRunner
         {
             if (Input.GetButtonDown("Horizontal"))
             {
-                horizontalInput = Input.GetAxis("Horizontal");
-                Debug.Log(horizontalInput+" : Horizontal Input Received");
-
+                horizontalInput = Input.GetAxisRaw("Horizontal");
+             
+              
                 if (horizontalInput > 0)
                 {
+                    playerController.MoveRight();
                     OnRightPressed();
                 }
                 else if (horizontalInput < 0)
                 {
+                    playerController.MoveLeft();
                     OnLeftPressed();
                 }
             }

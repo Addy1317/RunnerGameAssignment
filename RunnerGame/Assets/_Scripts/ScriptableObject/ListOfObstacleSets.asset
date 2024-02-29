@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: ListOfObstacleSets
   m_EditorClassIdentifier: 
   obstacleSetsList:
-  - {fileID: 5386520500679261414, guid: 5d524df016b460743a1dfbe82e22e3e3, type: 3}
   - {fileID: 1842031581761838756, guid: ff6e16ce4511bb041abd42147d295eb6, type: 3}
   - {fileID: 2189979749839480765, guid: d1feb5a96d7c0fa41bba5be324cb8d2d, type: 3}

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace EdgeRunner
 {
-    [RequireComponent(typeof(Rigidbody), typeof(CapsuleCollider))]
+    //[RequireComponent(typeof(Rigidbody), typeof(CapsuleCollider))]
     public class PlayerController : MonoBehaviour
     {
         [Header("Player Attributes")]
@@ -13,14 +13,14 @@ namespace EdgeRunner
         [SerializeField] private float jumpForce = 5f;
 
         [Header("Physics Reference")]
-        private Rigidbody playerRigidbody;
+        [SerializeField] private Rigidbody playerRigidbody;
         
         [Header("Collider Reference")]
         [SerializeField] private CapsuleCollider playerCapsuleCollider;
         [SerializeField] private float normalColliderHeight = 115f;
         [SerializeField] private float slidingColliderHeight = 50f;
 
-        [SerializeField] LanesToMove currentLane = LanesToMove.Center;
+        [SerializeField] private LanesToMove currentLane = LanesToMove.Center;
 
         [Header("GroundCheck")]
         [SerializeField] private float groundHeight = -0.15f;
@@ -62,7 +62,7 @@ namespace EdgeRunner
         
         private void MoveForward()
         {
-            GetComponent<Rigidbody>().MovePosition(transform.position +
+          playerRigidbody.MovePosition(transform.position +
                 (movementSpeed * Time.deltaTime * (transform.forward + targetDirection)));
         }
 
@@ -95,6 +95,7 @@ namespace EdgeRunner
         void GetNewPositionToMove()
         {
             targetX = LanePositions.Instance.GetLanePosition(currentLane).x;
+            Debug.LogWarning(currentLane);
             isMovingInX = true;
         }
 
@@ -139,7 +140,8 @@ namespace EdgeRunner
 
         public void PlayerJump()
         {
-            GetComponent<Rigidbody>().AddForce(transform.up * jumpForce, ForceMode.Impulse);
+         //   GetComponent<Rigidbody>().AddForce(transform.up * jumpForce, ForceMode.Impulse);
+           playerRigidbody.AddForce(transform.up * jumpForce, ForceMode.Impulse);
         }
 
         public void StartedJumping()
