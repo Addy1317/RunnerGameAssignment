@@ -590,6 +590,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 68990129200996015}
+  - component: {fileID: 6566324618203054613}
   m_Layer: 0
   m_Name: Enviornment
   m_TagString: Untagged
@@ -640,6 +641,21 @@ Transform:
   - {fileID: 3845881406163567564}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6566324618203054613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2961754041572250961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87e00090306dca5489cf4fed5c4c944c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  widthOfAPlatform: 56
+  requiredAdditionalDistance: 7
+  ObstacleSetsScriptable: {fileID: 11400000, guid: d7194da19d3cb4b40ba974ce46733a70, type: 2}
 --- !u!1 &3339460345311772122
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,6 +833,7 @@ GameObject:
   - component: {fileID: 5347413516520198125}
   - component: {fileID: 4149534155536246667}
   - component: {fileID: 2911011525856771849}
+  - component: {fileID: 7612382735478469117}
   m_Layer: 0
   m_Name: Chunk_1
   m_TagString: Untagged
@@ -889,6 +906,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7612382735478469117
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4304797301320210083}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 110.66261, y: 56.000034, z: 0.0000067055244}
+  m_Center: {x: -0.008998871, y: 0, z: -0.40000013}
 --- !u!1 &4333067819006589009
 GameObject:
   m_ObjectHideFlags: 0

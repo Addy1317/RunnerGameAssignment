@@ -1641,6 +1641,12 @@ GameObject:
   m_Component:
   - component: {fileID: 9161151112257939810}
   - component: {fileID: 6010032205537281448}
+  - component: {fileID: 2012111674870130902}
+  - component: {fileID: 4723291032880596257}
+  - component: {fileID: 2418909952188983157}
+  - component: {fileID: 4524413360758694095}
+  - component: {fileID: 6754934202874103315}
+  - component: {fileID: 4235046824916954345}
   m_Layer: 0
   m_Name: EdgeRunner
   m_TagString: Untagged
@@ -1659,7 +1665,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.4, z: 0}
   m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2696151436186713650}
   - {fileID: 5182631910768182937}
@@ -1686,6 +1692,122 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!54 &2012111674870130902
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5769708460451189023}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
+--- !u!136 &4723291032880596257
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5769708460451189023}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 15
+  m_Height: 115
+  m_Direction: 1
+  m_Center: {x: 0, y: 57.5, z: 0}
+--- !u!114 &2418909952188983157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5769708460451189023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1542f711c0aab4592a3c2400a40c6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 70
+  jumpForce: 7
+  playerRigidbody: {fileID: 2012111674870130902}
+  playerCapsuleCollider: {fileID: 4723291032880596257}
+  normalColliderHeight: 115
+  slidingColliderHeight: 50
+  currentLane: 0
+  groundHeight: -0.3
+  immunityTime: 1
+--- !u!114 &4524413360758694095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5769708460451189023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3c47ffabe8afe14db0748786f0f49a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slidingParameterName: Sliding
+  jumpParamName: Jump
+  leftParamName: TurnLeft
+  rightParamName: TurnRight
+  isInAirParamName: IsInAir
+  getHitParamName: GetHit
+--- !u!114 &6754934202874103315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5769708460451189023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 414339c9344975343a29b6f852547174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4235046824916954345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5769708460451189023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49df06ace7062b48813325726fe78c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
+  coinsText: {fileID: 0}
+  lifesText: {fileID: 0}
 --- !u!1 &5811582842129118398
 GameObject:
   m_ObjectHideFlags: 0

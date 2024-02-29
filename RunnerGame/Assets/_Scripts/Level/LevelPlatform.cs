@@ -11,7 +11,7 @@ namespace EdgeRunner
 
         private List<Transform> currentObstacles = new List<Transform>();
 
-        [SerializeField] private ObstacleSetsListSO ObstacleSetsScriptable;
+        [SerializeField] private ObstacleSetsListScriptableObject ObstacleSetsScriptable;
 
         public float WidthOfAPlatform
         {
@@ -37,6 +37,7 @@ namespace EdgeRunner
 
             for (int i = 0; i < numberOfObstacles; i++)
             {
+
                 randomPosition.x = LanePositions.Instance.GetRandomLane();
                 randomPosition.y = 0;
                 currentObstacles.Add(Instantiate<Transform>(

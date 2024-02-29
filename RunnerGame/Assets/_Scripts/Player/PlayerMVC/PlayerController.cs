@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace EdgeRunner
 {
+    [RequireComponent(typeof(Rigidbody), typeof(CapsuleCollider))]
     public class PlayerController : MonoBehaviour
     {
         [Header("Player Attributes")]
@@ -12,7 +13,7 @@ namespace EdgeRunner
         [SerializeField] private float jumpForce = 5f;
 
         [Header("Physics Reference")]
-        [SerializeField] private Rigidbody playerRigidbody;
+        private Rigidbody playerRigidbody;
         
         [Header("Collider Reference")]
         [SerializeField] private CapsuleCollider playerCapsuleCollider;
@@ -139,7 +140,6 @@ namespace EdgeRunner
 
         public void PlayerJump()
         {
-            //Debug.Log("Jumping start");
             GetComponent<Rigidbody>().AddForce(transform.up * jumpForce, ForceMode.Impulse);
         }
 
@@ -159,14 +159,12 @@ namespace EdgeRunner
 
         public void OnCoinCollected(int points)
         {
-            //increase player score / coin count
             playerModel.InscreaseCollectedCoins();
             playerModel.UpdaCoinsText(playerModel.CollectedCoins);
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            //Debug.Log("Triggered");
             ICollectable collectable = null;
             ICollidable collidableObstacle = null;
 
@@ -177,7 +175,6 @@ namespace EdgeRunner
 
             if (!isImmune && other.TryGetComponent<ICollidable>(out collidableObstacle))
             {
-                //Debug.Log("Got Obstacle");
                 collidableObstacle.OnCollided(this);
             }
         }
@@ -185,7 +182,6 @@ namespace EdgeRunner
         public void OnCollidedWithObstacle()
         {
             playerAnimation.SetGetHitTrigger();
-            //reduce player life etc.
             playerModel.LoseLife();
             playerModel.UpdateLifesText(playerModel.Lifes);
             MakeImune();
